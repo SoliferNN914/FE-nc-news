@@ -1,0 +1,18 @@
+.articleSection{
+    display:flex;
+    height: 200px;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.articleCard{
+    width: 200px;
+    background-color: thistle;
+    width: 500px;
+    padding: 50px;
+    border-radius: 30px;
+}
+img {
+    width: 400px;
+}

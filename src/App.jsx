@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import Header from "./Header"
+import ArticlesList from "./ArticlesList"
 
 
 function App() {
-
-
   return (
     <>
-
+    <Header/>
+    <ArticlesList/>
     </>
   )
 }
