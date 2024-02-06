@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { getArticleById } from './utils/newsApi';
 import { useState, useEffect } from "react";
 import Expandable from './Expandable';
+import CommentCard from './CommentCards';
 
 export default function SingleArticle() {
     const { id } = useParams();
@@ -26,10 +27,11 @@ export default function SingleArticle() {
         <section className='ArticleContainer'>
         <div className='individualArticle'>
         <h2>Title: {article.title}</h2>
-            <img src={article.article_img_url} />
-            <Expandable>
-            <p>{article.body}</p>
-            </Expandable>
+        <img src={article.article_img_url} />
+        <Expandable>
+        <p>{article.body}</p>
+        </Expandable>
+        <CommentCard id={id}/>
         </div>
         </section>
 
