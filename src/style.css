@@ -29,3 +29,9 @@ img {
     padding: 50px;
     border-radius: 30px;
 }
+
+.commentsCard{
+    border: 2px solid rgb(197, 147, 218);
+    border-radius: 10px;
+    margin: 10px;
+}
