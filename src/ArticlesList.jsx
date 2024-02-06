@@ -7,17 +7,15 @@ export default function ArticlesList(){
 
     const [articles, setArticles] = useState([])
 
-    // const query = 'articles'
-
     useEffect(()=>{
-        getArticles('articles')
+        getArticles()
         .then((response)=>{
-            // const data = response.json()
+
             setArticles(response)
             console.log(response);
         })
         .catch((err)=>{
-            console.log(err);
+            console.log('Error:', err);
         })
     }, [])
 
