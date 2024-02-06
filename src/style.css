@@ -8,11 +8,24 @@
 
 .articleCard{
     width: 200px;
-    background-color: thistle;
+    background-color: rgb(158, 222, 220);
     width: 500px;
     padding: 50px;
     border-radius: 30px;
 }
 img {
     width: 400px;
+}
+
+.ArticleContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.individualArticle{
+    width: 200px;
+    background-color: rgb(158, 222, 220);
+    width: 500px;
+    padding: 50px;
+    border-radius: 30px;
 }
