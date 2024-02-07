@@ -29,5 +29,11 @@ export const patchVotes = (id, vote) => {
     });
 };
 
+export const postComment = (id, { username, body }) => {
+    return newsApi.post(`articles/${id}/comments`, { username, body }).then((res)=>{
+        return res.data
+    });
+}
+
 
 

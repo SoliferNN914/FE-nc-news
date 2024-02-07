@@ -4,6 +4,7 @@ import { getComments } from "./utils/newsApi";
 import { useParams } from "react-router-dom";
 import moment from "moment";
 import Expandable from "./Expandable";
+import PostComment from "./PostComment";
 
 export default function CommentCard() {
   const { id } = useParams();
@@ -26,6 +27,7 @@ export default function CommentCard() {
     <>
     <h2>Comments</h2>
     <Expandable>
+    <PostComment id={id}/>
     <section >
         {comments.map((comment) => {
           return (
