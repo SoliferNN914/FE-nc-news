@@ -3,6 +3,8 @@ import { getArticleById } from './utils/newsApi';
 import { useState, useEffect } from "react";
 import Expandable from './Expandable';
 import CommentCard from './CommentCards';
+import Vote from "./Vote";
+
 
 export default function SingleArticle() {
     const { id } = useParams();
@@ -21,7 +23,7 @@ export default function SingleArticle() {
     if (!article) {
         return <p>Loading...</p>
     }
-
+  
     return (
         <>
         <section className='ArticleContainer'>
@@ -31,7 +33,8 @@ export default function SingleArticle() {
         <Expandable>
         <p>{article.body}</p>
         </Expandable>
-        <CommentCard id={id}/>
+        <CommentCard/>
+        <Vote votes={article.votes} id={article.article_id}/>
         </div>
         </section>
 

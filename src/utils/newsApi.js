@@ -13,7 +13,6 @@ export default function getArticles () {
 
 export const getArticleById = (id) => {
     return newsApi.get(`articles/${id}`).then((res) => {
-        console.log(res.data.article);
       return res.data.article[0];
     });
 };
@@ -23,3 +22,12 @@ export const getComments = (id) => {
       return res.data.comments;
     });
 };
+
+export const patchVotes = (id, vote) => {
+    return newsApi.patch(`articles/${id}`, { inc_votes: vote }).then((res) => {
+        return res.data
+    });
+};
+
+
+

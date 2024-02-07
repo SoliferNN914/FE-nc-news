@@ -29,11 +29,11 @@ export default function CommentCard() {
     <section >
         {comments.map((comment) => {
           return (
-            <div className="commentsCard">
+            <div className="commentsCard" key={comment.comment_id}>
               <p>{comment.body}</p>
-              <p>{comment.author}</p>
+              <p>Author: {comment.author}</p>
               <p>
-                {moment(comment.created_at).format("dddd, MMM DD at HH:mm a")}
+                Created on: {moment(comment.created_at).format("dddd, MMM DD at HH:mm a")}
               </p>
             </div>
           );

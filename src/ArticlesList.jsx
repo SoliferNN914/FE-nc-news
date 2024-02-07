@@ -10,9 +10,7 @@ export default function ArticlesList(){
     useEffect(()=>{
         getArticles()
         .then((response)=>{
-
             setArticles(response)
-            console.log(response);
         })
         .catch((err)=>{
             console.log('Error:', err);
