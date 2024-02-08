@@ -12,7 +12,7 @@ export default function Expandable({ children }) {
     return (
         <div>
             {isOpen ? children : null}
-            <button onClick={toggleOpen} variant="contained" type="submit" size="small" color="secondary">
+            <button onClick={toggleOpen} type="submit">
             {isOpen ? "Hide" : "Show More"}
             </button>
         </div>

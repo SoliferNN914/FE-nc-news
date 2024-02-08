@@ -12,7 +12,6 @@ export default function PostComment({ id }) {
         event.preventDefault();
 
         try {
-            console.log(userName);
             const postedComment = await postComment(id, { username: userName, body });
             console.log("Comment posted:", postedComment);
             setSuccess(true)
