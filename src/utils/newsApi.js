@@ -40,3 +40,9 @@ export const deleteComment = (id) => {
       return res.data
     });
   };
+
+export const getArticlesByTopic = (topic) => {
+    return newsApi.get(`articles?topic=${topic}`).then((res)=>{
+        return res.data.articles
+    })
+}
