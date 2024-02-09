@@ -1,37 +1,74 @@
-.articleSection{
-    display:flex;
-    height: 200px;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+.Header {
+  position: absolute;
+  top: 8px;
+  left: 30px;
+  font-size: 50px;
+  font-family: cursive;
+  color: rgb(0, 0, 0);
 }
 
-.articleCard{
-    width: 200px;
-    background-color: rgb(158, 222, 220);
-    width: 500px;
-    padding: 50px;
-    border-radius: 30px;
+.articleSection {
+  display: flex;
+  height: 200px;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.articleCard {
+  width: 200px;
+  background-color: rgb(189, 165, 132);
+  width: 500px;
+  padding: 50px;
+  border-radius: 30px;
 }
 img {
-    width: 400px;
+  width: 400px;
+  border-radius: 10px;
 }
 
-.ArticleContainer{
-    display: flex;
-    justify-content: center;
+.ArticleContainer {
+  display: flex;
+  justify-content: center;
 }
 
-.individualArticle{
-    width: 200px;
-    background-color: rgb(158, 222, 220);
-    width: 500px;
-    padding: 50px;
-    border-radius: 30px;
+.individualArticle {
+  width: 200px;
+  background-color: rgb(189, 165, 132);
+  width: 500px;
+  padding: 50px;
+  border-radius: 30px;
 }
 
-.commentsCard{
-    border: 2px solid rgb(197, 147, 218);
-    border-radius: 10px;
-    margin: 10px;
+.commentsCard {
+  border: 2px solid rgb(197, 147, 218);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.individualArticle:hover {
+  background-color: rgb(180, 150, 84);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.473);
+}
+
+.articleCard:hover {
+  background-color: rgb(180, 150, 84);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.473);
+}
+
+body {
+  background-image: url("https://wallpapercave.com/wp/wp11782545.jpg");
+  background-attachment: fixed;
+  padding-top: 80px;
+}
+
+.button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-family: cursive;
+    font-size: medium;
+    background-color:  rgba(163, 48, 92, 0.703);
+}
+
+.button:hover {
+  opacity: 1;
 }

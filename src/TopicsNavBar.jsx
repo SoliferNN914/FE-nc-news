@@ -1,18 +1,31 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getTopics } from "./utils/newsApi";
 
-export default function Navbar({ topics, setSelectedTopic }) {
-  const handleTopicSelection = (topic) => {
-    setSelectedTopic(topic);
-  };
+export default function Navbar({ topicQuery }) {
+  const [allTopics, setAllTopics] = useState([]);
+
+  useEffect(() => {
+    getTopics()
+      .then((response) => {
+        setAllTopics(response);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+  }, []);
 
   return (
-    <nav>
-      {topics.map((topic) => (
-        <Link key={topic} to={`/articles?topic=${topic}`}>
-          <button onClick={() => handleTopicSelection(topic)}>{topic}</button>
-        </Link>
-      ))}
-    </nav>
+    <>
+      <nav>
+        {allTopics.map((topic) => (
+          <Link key={topic.slug} to={`/articles?topic=${topic.slug}`}>
+            <button className="button" onClick={() => topicQuery(topic.slug)}>
+              {topic.slug}
+            </button>
+          </Link>
+        ))}
+      </nav>
+    </>
   );
 }

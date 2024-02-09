@@ -12,16 +12,20 @@ export default function CommentCard() {
   const { userName } = useContext(UserContext);
   const { id } = useParams();
   const [comments, setComments] = useState([]);
+  const [posted, setPosted] = useState(false);
+
 
   const handleDelete = (id) => {
     deleteComment(id)
-      .then((res) => {
+      .then(() => {
         setComments((prevComments) =>
           prevComments.filter((comment) => comment.comment_id !== id)
         );
         alert("Comment will be deleted! Press ok to proceed");
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err, "Deleting comment error");
+      });
   };
 
   useEffect(() => {
@@ -29,18 +33,15 @@ export default function CommentCard() {
       .then((response) => {
         setComments(response);
       })
-      .catch(
-        (err) => {
-          console.error("Error:", err);
-        },
-        [id]
-      );
-  });
+      .catch((err) => {
+        console.error("Error:", err);
+      })
+  }, [id, posted]);
   return (
     <>
       <h2>Comments</h2>
       <Expandable>
-        <PostComment id={id} />
+        <PostComment id={id} onSuccess={() => setPosted(!posted)}/>
         <section>
           {comments.map((comment) => {
             return (
@@ -48,11 +49,16 @@ export default function CommentCard() {
                 <p>{comment.body}</p>
                 <p>Author: {comment.author}</p>
                 <p>
-                  Created on:{" "}{moment(comment.created_at).format("dddd, MMM DD at HH:mm a")}
+                  Created on:{" "}
+                  {moment(comment.created_at).format("dddd, MMM DD at HH:mm a")}
                 </p>
-                {comment.author !== userName && (<button disabled>Delete</button>)}
+                {comment.author !== userName && (
+                  <button disabled>Delete</button>
+                )}
                 {comment.author === userName && (
-                  <button onClick={() => handleDelete(comment.comment_id)}>Delete</button>
+                  <button onClick={() => handleDelete(comment.comment_id)}>
+                    Delete
+                  </button>
                 )}
               </div>
             );
