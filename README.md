@@ -26,7 +26,7 @@ The backend for this project is hosted on GitHub. You can find the repository [h
 1. Clone the repository from GitHub:
 - git clone [https://github.com/SoliferNN914/FE-nc-news]
 2. Navigate to the project directory:
-- cd NC-News-Frontend
+- cd FE-nc-news
 3. Install dependencies:
 - npm install
 
